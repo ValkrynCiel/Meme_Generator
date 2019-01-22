@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="meme.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+<body>
+    <div id="hideEverything">
+    </div>
+    <div class="sliding_button">
+        <div class="buttonToCenter">
+            <button id="down-arrow"><i class="down"></i></p></button>
+        </div>
+    </div>
+    <div class="container" id="open">
+        <form>
+            <h1>Generate Your Memes Here</h1>
+
+            <div class="url">
+                <label for="url">Url:</label>
+                <input type="url" id="url" name="url" placeholder="Enter your image url">
+            </div>
+        
+            <label for="top-text">Text on top:</label>
+            <input type="text" id="top-text" name="topText" placeholder="Insert text for the top of your meme">
+            
+            <div class="bottom">
+                <label for="bottom-text">Text on bottom:</label>
+                <input type="text" id="bottom-text" name="bottomText" placeholder="Insert text for the bottom of your meme">
+            </div>
+            <div class="fitThis">
+                <div class="button">
+                    <button class="meme-ify" id="meme-ify" type="submit" onclick="memeCreation()">Meme-ify this</button>
+                </div>
+                <div class="switch">
+                        <button id="up_arrow"><i class="up"></i></p></button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <div class="meme-container" id="meme-open">
+        
+        </div> 
+       
+          
+    </div>
+    <script src="meme.js"></script>
+</body>
+</html>
