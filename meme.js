@@ -78,9 +78,9 @@ function memeCreation(){
     var image = document.getElementById("img-" + IdCount);
     checkForLoadedImage(image);
 
-    for (i=0; i<memeList.length; i++){
-    memeList[i].addEventListener("mouseenter", desperation); // i have to keep iterating through the list. it doesn't work if I just add the event listener to the last one on the list.
-    }
+    
+    memeList[IdCount].addEventListener("mouseenter", desperation); 
+    
     
     IdCount++;
 }
