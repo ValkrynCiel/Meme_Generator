@@ -55,12 +55,27 @@ function memeCreation(){
         memeDisplay = document.getElementsByClassName("meme-container")[0];
         
     event.preventDefault(); //prevents reloading page
-    
-    memeDisplay.innerHTML += '<div class="meme" id=' + IdCount + '> <img id="img-' + IdCount + '" src=' + imgSource.value + '> <p class="meme-top-text">' + topText.value.toUpperCase() + '</p><p class="meme-bottom-text">'+ bottomText.value.toUpperCase() + '</p> <div class="hoverToDelete" id="background-' + IdCount + '"> <p class="goodbye-text"><span id="dying-' + IdCount + '"></span></p> </div></div>';
+
+    var newDiv = document.createElement("div");
+
+    newDiv.classList.add("meme");
+    newDiv.id = IdCount
+
+    var childToAppend = ` 
+        <img id= "img-${IdCount}" src= "${imgSource.value}"> 
+        <p class="meme-top-text">${topText.value.toUpperCase()}</p>
+        <p class="meme-bottom-text">${bottomText.value.toUpperCase()}</p>
+        <div class="hoverToDelete" id="background-${IdCount}"> 
+            <p class="goodbye-text"><span id="dying-${IdCount}"></span></p> 
+        </div>
+    `
+    newDiv.innerHTML= childToAppend;
+    // these ````` things make line breaks possible in JS
+    memeDisplay.appendChild(newDiv)
 
     resetInput(imgSource, topText, bottomText);
 
-    var image = document.getElementById('img-'+IdCount);
+    var image = document.getElementById("img-" + IdCount);
     checkForLoadedImage(image);
 
     for (i=0; i<memeList.length; i++){
