@@ -78,8 +78,9 @@ function memeCreation(){
     var image = document.getElementById("img-" + IdCount);
     checkForLoadedImage(image);
 
-    
-    memeList[IdCount].addEventListener("mouseenter", desperation); 
+    for (i = 0; i < memeList.length; i++){
+    memeList[i].addEventListener("mouseenter", desperation); 
+    }
     
     
     IdCount++;
